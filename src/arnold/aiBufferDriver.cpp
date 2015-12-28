@@ -4,191 +4,159 @@
 
 #include "ai.h"
 
-static void drawToBuffer_RGBA(float *buffer, 
-                              const size_t w,
-                              const size_t x, 
-                              const size_t y,
-                              const AtRGBA rgba) { 
+static void drawToBuffer_RGBA(float *buffer, const size_t w, const size_t x,
+                              const size_t y, const AtRGBA rgba) {
 
-    buffer[  (y * w + x) * 4  ] = rgba.r;
-    buffer[(y * w + x) * 4 + 1] = rgba.g; 
-    buffer[(y * w + x) * 4 + 2] = rgba.b; 
-    buffer[(y * w + x) * 4 + 3] = rgba.a;
+  buffer[(y * w + x) * 4] = rgba.r;
+  buffer[(y * w + x) * 4 + 1] = rgba.g;
+  buffer[(y * w + x) * 4 + 2] = rgba.b;
+  buffer[(y * w + x) * 4 + 3] = rgba.a;
 }
 
-static void drawToBuffer_RGB(float *buffer, 
-                             const size_t w,
-                             const size_t x, 
-                             const size_t y,
-                             const AtRGBA rgba) { 
+static void drawToBuffer_RGB(float *buffer, const size_t w, const size_t x,
+                             const size_t y, const AtRGBA rgba) {
 
-    buffer[  (y * w + x) * 3  ] = rgba.r;
-    buffer[(y * w + x) * 3 + 1] = rgba.g; 
-    buffer[(y * w + x) * 3 + 2] = rgba.b;
+  buffer[(y * w + x) * 3] = rgba.r;
+  buffer[(y * w + x) * 3 + 1] = rgba.g;
+  buffer[(y * w + x) * 3 + 2] = rgba.b;
 }
-    
+
 /////////////////////////////////
-    
+
 AI_DRIVER_NODE_EXPORT_METHODS(BufferDriverMtd);
-    
-node_loader
-{
-    if (i > 0)
-        return false;
-    
-    node->methods = (AtNodeMethods*) BufferDriverMtd;
-    node->output_type = AI_TYPE_NONE;
-    node->name = "driver_buffer";
-    node->node_type = AI_NODE_DRIVER;
-    strcpy(node->version, AI_VERSION);
-    
+
+node_loader {
+  if (i > 0)
+    return false;
+
+  node->methods = (AtNodeMethods *)BufferDriverMtd;
+  node->output_type = AI_TYPE_NONE;
+  node->name = "driver_buffer";
+  node->node_type = AI_NODE_DRIVER;
+  strcpy(node->version, AI_VERSION);
+
+  return true;
+}
+
+node_parameters {
+  AiParameterInt("width", 600);
+  AiParameterInt("height", 800);
+  AiParameterPTR("buffer_pointer", NULL);
+  AiParameterPTR("bucket_pos_pointer", NULL);
+  AiParameterPTR("progress_pointer", NULL);
+  AiParameterFlt("gamma", 2.2);
+  AiParameterBool("predictive", 0);
+}
+
+node_initialize {
+  // Initialize the driver (set the required AOVs and indicate that
+  // we want values at all the depths)
+  AiDriverInitialize(node, true, NULL);
+}
+
+node_update {}
+
+driver_supports_pixel_type {
+  // this driver will support RGB and RGBA formats
+  switch (pixel_type) {
+  case AI_TYPE_RGB:
     return true;
-}
-    
-node_parameters
-{
-    AiParameterInt("width", 600);
-    AiParameterInt("height", 800);
-    AiParameterPTR("buffer_pointer", NULL);
-	AiParameterPTR("bucket_pos_pointer", NULL);
-	AiParameterPTR("progress_pointer", NULL);
-    AiParameterFlt("gamma", 2.2);
-	AiParameterBool("predictive", 0);
-}
-    
-node_initialize
-{
-    // Initialize the driver (set the required AOVs and indicate that
-    // we want values at all the depths)
-    AiDriverInitialize(node, true, NULL);
-}
-    
-node_update
-{
-
-}
-    
-driver_supports_pixel_type
-{
-    // this driver will support RGB and RGBA formats
-    switch (pixel_type)
-    {
-        case AI_TYPE_RGB:
-            return true;
-        case AI_TYPE_RGBA:
-            return true;
-        default:
-            return false;
-    }
-}
-    
-driver_open
-{
-	int *progress = (int *)AiNodeGetPtr(node, "progress_pointer");
-	int data_width = data_window.maxx - data_window.minx;
-	int data_height = data_window.maxy - data_window.miny;
-
-	int num_buckets = ((data_width + bucket_size - 1) / bucket_size) * (
-		(data_height + bucket_size - 1) / bucket_size);
-	progress[0] = num_buckets;
-	progress[1] = 0;
-}
-    
-driver_extension
-{
-    return NULL;
-}
-    
-driver_needs_bucket
-{
+  case AI_TYPE_RGBA:
     return true;
+  default:
+    return false;
+  }
 }
-    
-driver_prepare_bucket
-{
-    // Could add interactive features here.
-	int *bucket_pos = (int *)AiNodeGetPtr(node, "bucket_pos_pointer");
-	int *self_pos = bucket_pos + 4 * tid;
-	self_pos[0] = bucket_xo;
-	self_pos[1] = bucket_yo;
-	self_pos[2] = bucket_size_x;
-	self_pos[3] = bucket_size_y;
+
+driver_open {
+  int *progress = (int *)AiNodeGetPtr(node, "progress_pointer");
+  int data_width = data_window.maxx - data_window.minx;
+  int data_height = data_window.maxy - data_window.miny;
+
+  int num_buckets = ((data_width + bucket_size - 1) / bucket_size) *
+                    ((data_height + bucket_size - 1) / bucket_size);
+  progress[0] = num_buckets;
+  progress[1] = 0;
 }
-    
-driver_process_bucket
-{
-	int *bucket_pos = (int *)AiNodeGetPtr(node, "bucket_pos_pointer");
-	int *self_pos = bucket_pos + 4 * tid;
 
-	// Clean up the current bucket (ow, we don't know when the last group finishes)
-	self_pos[0] = -1;
-	self_pos[1] = -1;
-	self_pos[2] = -1;
-	self_pos[3] = -1;
+driver_extension { return NULL; }
+
+driver_needs_bucket { return true; }
+
+driver_prepare_bucket {
+  // Could add interactive features here.
+  int *bucket_pos = (int *)AiNodeGetPtr(node, "bucket_pos_pointer");
+  int *self_pos = bucket_pos + 4 * tid;
+  self_pos[0] = bucket_xo;
+  self_pos[1] = bucket_yo;
+  self_pos[2] = bucket_size_x;
+  self_pos[3] = bucket_size_y;
 }
-    
-driver_write_bucket
-{
-    int width  = AiNodeGetInt(node, "width");
-    int height = AiNodeGetInt(node, "height");
-    float *buffer = (float *)AiNodeGetPtr(node, "buffer_pointer");
-    float gamma = AiNodeGetFlt(node, "gamma");
-	bool predictive = AiNodeGetBool(node, "predictive");
-    
-    int         pixel_type;
-    const void* bucket_data;
-    const char* aov_name;
-    
-	// Writes to the frame buffer
-    while (AiOutputIteratorGetNext(iterator, &aov_name, &pixel_type, &bucket_data))
-    {
-        size_t x, y;
-        
-        for (int j = 0; j < bucket_size_y; ++j) {
-            for (int i = 0; i < bucket_size_x; ++i) {
-                y = j + bucket_yo;
-                x = i + bucket_xo;
-                size_t in_idx = j * bucket_size_x + i;
-                
-                if (x >= width || y >= height)
-                    continue ;
-                
-                AtRGBA rgba;
-                if (pixel_type == AI_TYPE_RGBA) {
-                    rgba = ((AtRGBA*)bucket_data)[in_idx];
-                    drawToBuffer_RGBA(buffer, width, x, y, rgba);
-                }
-                if (pixel_type == AI_TYPE_RGB) {
-                    AtRGB src = ((AtRGB*)bucket_data)[in_idx];                    
-                    rgba.r = src.r;
-                    rgba.g = src.g;
-                    rgba.b = src.b;
-                    drawToBuffer_RGB(buffer, width, x, y, rgba);
 
-                }
+driver_process_bucket {
+  int *bucket_pos = (int *)AiNodeGetPtr(node, "bucket_pos_pointer");
+  int *self_pos = bucket_pos + 4 * tid;
 
-            }
+  // Clean up the current bucket (ow, we don't know when the last group
+  // finishes)
+  self_pos[0] = -1;
+  self_pos[1] = -1;
+  self_pos[2] = -1;
+  self_pos[3] = -1;
+}
+
+driver_write_bucket {
+  int width = AiNodeGetInt(node, "width");
+  int height = AiNodeGetInt(node, "height");
+  float *buffer = (float *)AiNodeGetPtr(node, "buffer_pointer");
+  float gamma = AiNodeGetFlt(node, "gamma");
+  bool predictive = AiNodeGetBool(node, "predictive");
+
+  int pixel_type;
+  const void *bucket_data;
+  const char *aov_name;
+
+  // Writes to the frame buffer
+  while (
+      AiOutputIteratorGetNext(iterator, &aov_name, &pixel_type, &bucket_data)) {
+    size_t x, y;
+
+    for (int j = 0; j < bucket_size_y; ++j) {
+      for (int i = 0; i < bucket_size_x; ++i) {
+        y = j + bucket_yo;
+        x = i + bucket_xo;
+        size_t in_idx = j * bucket_size_x + i;
+
+        if (x >= width || y >= height)
+          continue;
+
+        AtRGBA rgba;
+        if (pixel_type == AI_TYPE_RGBA) {
+          rgba = ((AtRGBA *)bucket_data)[in_idx];
+          drawToBuffer_RGBA(buffer, width, x, y, rgba);
         }
-
+        if (pixel_type == AI_TYPE_RGB) {
+          AtRGB src = ((AtRGB *)bucket_data)[in_idx];
+          rgba.r = src.r;
+          rgba.g = src.g;
+          rgba.b = src.b;
+          drawToBuffer_RGB(buffer, width, x, y, rgba);
+        }
+      }
     }
+  }
 
-	// Counts the processed buckets
-	int *progress = (int *)AiNodeGetPtr(node, "progress_pointer");
+  // Counts the processed buckets
+  int *progress = (int *)AiNodeGetPtr(node, "progress_pointer");
 
-	AtCritSec mycs;
-	AiCritSecInit(&mycs);
-	AiCritSecEnter(&mycs);
-	progress[1]++;
-	AiCritSecLeave(&mycs);
-	AiCritSecClose(&mycs);
+  AtCritSec mycs;
+  AiCritSecInit(&mycs);
+  AiCritSecEnter(&mycs);
+  progress[1]++;
+  AiCritSecLeave(&mycs);
+  AiCritSecClose(&mycs);
 }
-    
-driver_close
-{
 
-}
-    
-node_finish
-{
-    AiDriverDestroy(node);
-}
+driver_close {}
+
+node_finish { AiDriverDestroy(node); }

@@ -15,74 +15,71 @@ namespace LightmanDisplay {
  */
 class Viewport {
 public:
+  /**
+   * Constructor.
+   */
+  Viewport();
 
-    /**
-     * Constructor.
-     */
-    Viewport();
+  /**
+   * Destructor.
+   */
+  ~Viewport();
 
-    /**
-     * Destructor.
-     */
-    ~Viewport();
+  /**
+   * Bind the viewport to a bitmap buffer.
+   * @param buffer buffer that holds the bitmap pixels
+   * @param w width of the bitmap
+   * @param h height of the bitmap
+   * @return 0 if successful
+   *        -1 if failed
+   */
+  int bind(char *buffer, size_t w, size_t h);
 
-    /**
-     * Bind the viewport to a bitmap buffer.
-     * @param buffer buffer that holds the bitmap pixels
-     * @param w width of the bitmap
-     * @param h height of the bitmap
-     * @return 0 if successful
-     *        -1 if failed
-     */
-    int bind(char *buffer, size_t w, size_t h);
-
-    /**
-     * Update the viewport.
-     */
-    void update();
+  /**
+   * Update the viewport.
+   */
+  void update();
 
 private:
+  /**
+   * Width of the window context.
+   */
+  size_t w;
 
-    /**
-     * Width of the window context.
-     */
-    size_t w;
+  /**
+   * Height of the window context.
+   */
+  size_t h;
 
-    /**
-     * Height of the window context.
-     */
-    size_t h;
+  /**
+   * Pointer to the the content pixels (in GL_RGB).
+   */
+  void *pixels;
 
-    /**
-     * Pointer to the the content pixels (in GL_RGB).
-     */
-    void *pixels;
+  /**
+   * Vertex buferr;
+   */
+  GLuint vertex_buffer;
 
-    /**
-     * Vertex buferr;
-     */
-    GLuint vertex_buffer;
+  /**
+   * UV-coord buferr;
+   */
+  GLuint uv_buffer;
 
-    /**
-     * UV-coord buferr;
-     */
-    GLuint uv_buffer;
+  /**
+   * Texture of display port.
+   */
+  GLuint texture;
 
-    /**
-     * Texture of display port.
-     */
-    GLuint texture;
+  /**
+   * Texture ID of the displayed texture.
+   */
+  GLuint textureID;
 
-    /**
-     * Texture ID of the displayed texture.
-     */
-    GLuint textureID;
-
-    /**
-     * Shader program.
-     */
-    GLuint program;
-
+  /**
+   * Shader program.
+   */
+  GLuint program;
 };
 
 }; // namespace LightmanDisplay

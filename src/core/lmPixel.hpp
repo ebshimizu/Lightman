@@ -21,27 +21,24 @@ typedef vec4 GLMVector4;
  */
 class Pixel {
 public:
-
-    /**
-     * Compute the illuminance value of the pixel.
-     */
-    virtual inline float illum() = 0;
-
+  /**
+   * Compute the illuminance value of the pixel.
+   */
+  virtual inline float illum() = 0;
 };
 
 /**
  * Pixel with RGB channels.
  * You may access individual channel through members r,g,b, or x,y,z.
  */
-class Pixel3 : public Pixel, public GLMVector3  {
+class Pixel3 : public Pixel, public GLMVector3 {
 public:
+  using vec3::vec3;
+  using vec3::operator=;
 
-    using vec3::vec3;
-    using vec3::operator=;
-
-    inline float illum() {
-        return dot((vec3)*this, vec3(0.2126, 0.7152, 0.0722));
-    }
+  inline float illum() {
+    return dot((vec3) * this, vec3(0.2126, 0.7152, 0.0722));
+  }
 };
 
 /**
@@ -50,26 +47,24 @@ public:
  */
 class Pixel4 : public Pixel, public GLMVector4 {
 public:
+  using vec4::vec4;
+  using vec4::operator=;
 
-    using vec4::vec4;
-    using vec4::operator=;
-
-    inline float illum(){
-        return dot((vec4)*this, vec4(0.2126, 0.7152, 0.0722, 0));
-    }
-
+  inline float illum() {
+    return dot((vec4) * this, vec4(0.2126, 0.7152, 0.0722, 0));
+  }
 };
 
 /**
  * Clamp an illuminance value to 8 bit color
  */
-inline int clamp(float x){ return x < 0 ? 0 : x > 1 ? 255 : int(x * 255); }
+inline int clamp(float x) { return x < 0 ? 0 : x > 1 ? 255 : int(x * 255); }
 
 /**
  * Serialization
  */
-std::ostream& operator<<( std::ostream& os, const Pixel3& p );
-std::ostream& operator<<( std::ostream& os, const Pixel4& p );
+std::ostream &operator<<(std::ostream &os, const Pixel3 &p);
+std::ostream &operator<<(std::ostream &os, const Pixel4 &p);
 
 }; // namespace LightmanCore
 

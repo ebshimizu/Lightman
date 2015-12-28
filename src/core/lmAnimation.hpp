@@ -18,38 +18,36 @@ using namespace chrono;
  */
 class Keyframe {
 public:
+  /**
+   * Constructor.
+   * Creates a new keyframe at the given time with the given modulator.
+   * @param t time of the keyframe.
+   * @param mod modulator value of the keyframe.
+   */
+  Keyframe(float t, vec3 mod);
 
-    /**
-     * Constructor.
-     * Creates a new keyframe at the given time with the given modulator.
-     * @param t time of the keyframe.
-     * @param mod modulator value of the keyframe.
-     */
-    Keyframe(float t, vec3 mod);
+  /**
+   * Get the time of the keyframe.
+   * @return the time of the keyframe.
+   */
+  float get_time();
 
-    /**
-     * Get the time of the keyframe.
-     * @return the time of the keyframe.
-     */
-    float get_time();
-
-    /**
-     * Get the modulator of the keyframe.
-     * @return the modulator of the keyframe.
-     */
-    vec3 get_modulator();
+  /**
+   * Get the modulator of the keyframe.
+   * @return the modulator of the keyframe.
+   */
+  vec3 get_modulator();
 
 private:
+  /**
+   * Time.
+   */
+  float time;
 
-    /**
-     * Time.
-     */
-    float time;
-
-    /**
-     * Modulator.
-     */
-    vec3 modulator;
+  /**
+   * Modulator.
+   */
+  vec3 modulator;
 };
 
 /**
@@ -59,72 +57,69 @@ private:
  */
 class Timeline {
 public:
+  /**
+   * Constructor.
+   * Creates a new empty timeline.
+   */
+  Timeline(Layer *layer);
 
-    /**
-     * Constructor.
-     * Creates a new empty timeline.
-     */
-    Timeline(Layer *layer);
+  /**
+   * Get the number of animation.
+   * @return the length of the timeline.
+   */
+  float get_len();
 
-    /**
-     * Get the number of animation.
-     * @return the length of the timeline.
-     */
-    float get_len();
+  /**
+   * Get the layer being animated.
+   * @return layer the timeline is bound to
+   */
+  Layer *get_layer();
 
-    /**
-     * Get the layer being animated.
-     * @return layer the timeline is bound to
-     */
-    Layer *get_layer();
+  /**
+   * Get all the keyframes in the timeline.
+   * @return a vector that contains all the keyframes in the timeline.
+   */
+  vector<Keyframe> get_keyframes();
 
-    /**
-     * Get all the keyframes in the timeline.
-     * @return a vector that contains all the keyframes in the timeline.
-     */
-    vector<Keyframe> get_keyframes();
+  /**
+   * Add a new keyframe to the timeline.
+   * @param key new keyframe to add to the timeline.
+   */
+  void add_keyframe(Keyframe key);
 
-    /**
-     * Add a new keyframe to the timeline.
-     * @param key new keyframe to add to the timeline.
-     */
-    void add_keyframe(Keyframe key);
+  /**
+   * Delete a keyframe from the timeline.
+   * @param index index of the keyframe to delete.
+   */
+  void del_keyframe(size_t index);
 
-    /**
-     * Delete a keyframe from the timeline.
-     * @param index index of the keyframe to delete.
-     */
-    void del_keyframe(size_t index);
+  /**
+   * Interpolates between keyframes and generates a new keyframe
+   * at the given time.
+   * @param t time of the frame
+   */
+  Keyframe get_frame(float t);
 
-    /**
-     * Interpolates between keyframes and generates a new keyframe
-     * at the given time.
-     * @param t time of the frame
-     */
-    Keyframe get_frame(float t);
-
-    /**
-     * Clear out all keyframes in the timeline.
-     */
-    void clear();
-
+  /**
+   * Clear out all keyframes in the timeline.
+   */
+  void clear();
 
 private:
+  /**
+   * Length of the timeline (seconds)
+   */
+  float len;
 
-    /**
-     * Length of the timeline (seconds)
-     */
-    float len;
+  /**
+   * Layer to play the timeline on
+   */
+  Layer *layer;
 
-    /**
-     * Layer to play the timeline on
-     */
-    Layer *layer;
-
-    /**
-     * Keyframes in the timeline
-     */
-    vector<Keyframe> keyframes;
+  /**
+   * Keyframes in the timeline
+   */
+  vector<Keyframe> keyframes;
 };
 
 /**
@@ -136,153 +131,150 @@ private:
  */
 class Animation {
 public:
+  /**
+   * Constructor.
+   * Creates a new Lightman animation instance.
+   */
+  Animation();
 
-    /**
-     * Constructor.
-     * Creates a new Lightman animation instance.
-     */
-    Animation();
+  /**
+   * Destructor.
+   * Destroys the Lightman animation instance, freeing all timelines.
+   */
+  ~Animation();
 
-    /**
-     * Destructor.
-     * Destroys the Lightman animation instance, freeing all timelines.
-     */
-    ~Animation();
+  /**
+   * Start the animation.
+   * Animations have local timers that keeps track of both the local
+   * time in a loop and the global time of each update invocation.
+   * The internal timers are set on calls to start. For graphical
+   * applications that displays Lightman animations, start is idealy
+   * called immediately before the main display loop.
+   */
+  void start();
 
-    /**
-     * Start the animation.
-     * Animations have local timers that keeps track of both the local
-     * time in a loop and the global time of each update invocation.
-     * The internal timers are set on calls to start. For graphical
-     * applications that displays Lightman animations, start is idealy
-     * called immediately before the main display loop.
-     */
-    void start();
+  /**
+   * End the animation.
+   * This ends the application and resets the internal timers. Animations
+   * will restart from the beginning of the loop upon next call to start.
+   */
+  void end();
 
-    /**
-     * End the animation.
-     * This ends the application and resets the internal timers. Animations
-     * will restart from the beginning of the loop upon next call to start.
-     */
-    void end();
+  /**
+   * Update the animation since the last time update is called.
+   * Use this in the main update loop for graphical applications
+   * that plays Lightman applications.
+   */
+  void update();
 
-    /**
-     * Update the animation since the last time update is called.
-     * Use this in the main update loop for graphical applications
-     * that plays Lightman applications.
-     */
-    void update();
+  /**
+   * Step the animation forward by the given time.
+   * This provides a more flexible way for applications to time the
+   * application. Do note that larger time steps will cause aliasing.
+   * Animations will wrap around when its local time exceeds the length
+   * of the loop.
+   * @param time time to step the animation forward
+   */
+  void step(float time);
 
-    /**
-     * Step the animation forward by the given time.
-     * This provides a more flexible way for applications to time the
-     * application. Do note that larger time steps will cause aliasing.
-     * Animations will wrap around when its local time exceeds the length
-     * of the loop.
-     * @param time time to step the animation forward
-     */
-    void step(float time);
+  /**
+   * Get the length of the animation.
+   * @return length of the animation.
+   */
+  float get_len();
 
-    /**
-     * Get the length of the animation.
-     * @return length of the animation.
-     */
-    float get_len();
+  /**
+   * Set the length of the animation.
+   * Note that if the length of the animation exceeds that of a certain
+   * timeline, the timeline will no longer be processed until the next
+   * loop. However, it is possible to defined multiple timelines for
+   * the same layer. While it is possible to devide complicated layer
+   * animations into multiple timelines, behavior of the animation in
+   * overlap regions is undefined.
+   * @param len length of the animation.
+   */
+  void set_len(size_t len);
 
-    /**
-     * Set the length of the animation.
-     * Note that if the length of the animation exceeds that of a certain
-     * timeline, the timeline will no longer be processed until the next
-     * loop. However, it is possible to defined multiple timelines for
-     * the same layer. While it is possible to devide complicated layer
-     * animations into multiple timelines, behavior of the animation in
-     * overlap regions is undefined.
-     * @param len length of the animation.
-     */
-    void set_len(size_t len);
+  /**
+   * Get the fps of the animation.
+   * @return the fps of the animation (for video output only)
+   */
+  size_t get_fps();
 
-    /**
-     * Get the fps of the animation.
-     * @return the fps of the animation (for video output only)
-     */
-    size_t get_fps();
+  /**
+   * Set the fps of the animation.
+   * @param fps fps of the animation (for video output only)
+   */
+  void set_fps(size_t fps);
 
-    /**
-     * Set the fps of the animation.
-     * @param fps fps of the animation (for video output only)
-     */
-    void set_fps(size_t fps);
+  /**
+   * Add a timeline to the animation.
+   * @param timeline pointer to the timeline to add
+   */
+  void add_timeline(Timeline *timeline);
 
-    /**
-     * Add a timeline to the animation.
-     * @param timeline pointer to the timeline to add
-     */
-    void add_timeline(Timeline *timeline);
+  /**
+   * Remove a timeline from the animation.
+   * @param timeline pointer to the timeline to remove
+   */
+  void del_timeline(Timeline *timeline);
 
-    /**
-     * Remove a timeline from the animation.
-     * @param timeline pointer to the timeline to remove
-     */
-    void del_timeline(Timeline *timeline);
-
-    /**
-     * Get all the timelines in the animation.
-     * @return set of pointers to all the timelines in the animation.
-     */
-    set<Timeline*> get_timelines();
+  /**
+   * Get all the timelines in the animation.
+   * @return set of pointers to all the timelines in the animation.
+   */
+  set<Timeline *> get_timelines();
 
 private:
+  /**
+   * If the animation is playing.
+   * If the animation is not playing, calls to update and step have
+   * no effect.
+   */
+  bool playing;
 
-    /**
-     * If the animation is playing.
-     * If the animation is not playing, calls to update and step have
-     * no effect.
-     */
-    bool playing;
+  /**
+   * Length of a loop of the animation.
+   */
+  float len;
 
-    /**
-     * Length of a loop of the animation.
-     */
-    float len;
+  /**
+   * Frames per second used in video output.
+   */
+  size_t fps;
 
-    /**
-     * Frames per second used in video output.
-     */
-    size_t fps;
+  /**
+   * Local timer.
+   * Local time of last call to update / step.
+   * @internal
+   */
+  double loc_last;
 
-    /**
-     * Local timer.
-     * Local time of last call to update / step.
-     * @internal
-     */
-    double loc_last;
+  /**
+   * Local timer.
+   * Local time of current call to update / step.
+   * @internal
+   */
+  double loc_curr;
 
-    /**
-     * Local timer.
-     * Local time of current call to update / step.
-     * @internal
-     */
-    double loc_curr;
+  /**
+   * Global timer.
+   * Global time of last call to update / step.
+   * @internal
+   */
+  time_point<system_clock> sys_last;
 
-    /**
-     * Global timer.
-     * Global time of last call to update / step.
-     * @internal
-     */
-    time_point<system_clock> sys_last;
+  /**
+   * Global timer.
+   * Global time of current call to update / step.
+   * @internal
+   */
+  time_point<system_clock> sys_curr;
 
-    /**
-     * Global timer.
-     * Global time of current call to update / step.
-     * @internal
-     */
-    time_point<system_clock> sys_curr;
-
-
-    /**
-     * All timelines in the animation.
-     */
-    set<Timeline*> timelines;
+  /**
+   * All timelines in the animation.
+   */
+  set<Timeline *> timelines;
 };
 
 }; // namespace LightmanCore
