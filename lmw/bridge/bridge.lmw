@@ -1,0 +1,2655 @@
+{
+    "title": "PBridge",
+    "files": [
+        "panel_00.exr",
+        "panel_01.exr",
+        "panel_02.exr",
+        "panel_03.exr",
+        "panel_04.exr",
+        "panel_05.exr",
+        "panel_06.exr",
+        "panel_07.exr",
+        "panel_08.exr",
+        "panel_09.exr",
+        "panel_10.exr",
+        "panel_11.exr",
+        "panel_12.exr",
+        "panel_13.exr",
+        "panel_14.exr",
+        "panel_15.exr",
+        "panel_16.exr",
+        "panel_17.exr",
+        "panel_18.exr",
+        "panel_19.exr",
+        "panel_20.exr",
+        "panel_21.exr",
+        "panel_22.exr",
+        "panel_23.exr",
+        "panel_24.exr",
+        "panel_25.exr",
+        "panel_26.exr",
+        "panel_27.exr",
+        "panel_28.exr",
+        "panel_29.exr",
+        "panel_30.exr",
+        "panel_31.exr",
+        "panel_32.exr",
+        "panel_33.exr",
+        "panel_34.exr",
+        "panel_35.exr",
+        "panel_36.exr",
+        "panel_37.exr",
+        "panel_38.exr",
+        "panel_39.exr",
+        "panel_40.exr",
+        "panel_41.exr",
+        "panel_42.exr",
+        "panel_43.exr",
+        "panel_44.exr",
+        "panel_45.exr",
+        "panel_46.exr",
+        "panel_47.exr",
+        "panel_48.exr",
+        "panel_49.exr",
+        "panel_50.exr",
+        "panel_51.exr",
+        "panel_52.exr",
+        "panel_53.exr",
+        "panel_54.exr",
+        "panel_55.exr",
+        "ambient.exr"
+    ],
+    "ambient": "ambient",
+    "layers": [
+        {
+            "name": "ambient",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_00",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_01",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_02",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_03",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_04",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_05",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_06",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_07",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_08",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_09",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_10",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_11",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_12",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_13",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_14",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_15",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_16",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_17",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_18",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_19",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_20",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_21",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_22",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_23",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_24",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_25",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_26",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_27",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_28",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_29",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_30",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_31",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_32",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_33",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_34",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_35",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_36",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_37",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_38",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_39",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_40",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_41",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_42",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_43",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_44",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_45",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_46",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_47",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_48",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_49",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_50",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_51",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_52",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_53",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_54",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "panel_55",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "tonemapper": {
+        "type": "REINHARD",
+        "gamma": 2.2,
+        "level": 1.0,
+        "key": 0.18,
+        "wht": 1.0
+    },
+    "animation": {
+        "len": 57.0,
+        "fps": 25.0,
+        "timelines": [
+            {
+                "layer": "panel_00",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_01",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_02",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 5.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_03",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 6.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_04",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 5.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 7.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_05",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 5.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 6.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 8.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_06",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 6.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 7.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 9.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_07",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 7.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 8.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 10.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_08",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 8.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 9.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 11.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_09",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 9.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 10.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 12.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_10",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 10.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 11.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 13.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_11",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 11.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 12.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 14.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_12",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 12.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 13.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 15.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_13",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 13.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 14.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 16.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_14",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 14.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 15.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 17.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_15",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 15.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 16.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 18.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_16",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 16.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 17.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 19.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_17",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 17.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 18.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 20.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_18",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 18.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 19.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 21.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_19",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 19.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 20.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 22.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_20",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 20.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 21.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 23.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_21",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 21.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 22.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 24.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_22",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 22.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 23.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 25.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_23",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 23.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 24.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 26.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_24",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 24.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 25.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 27.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_25",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 25.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 26.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 28.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_26",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 26.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 27.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 29.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_27",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 27.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 28.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 30.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_28",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 28.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 29.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 31.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_29",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 29.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 30.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 32.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_30",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 30.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 31.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 33.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_31",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 31.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 32.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 34.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_32",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 32.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 33.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 35.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_33",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 33.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 34.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 36.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_34",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 34.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 35.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 37.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_35",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 35.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 36.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 38.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_36",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 36.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 37.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 39.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_37",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 37.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 38.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 40.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_38",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 38.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 39.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 41.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_39",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 39.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 40.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 42.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_40",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 40.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 41.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 43.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_41",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 41.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 42.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 44.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_42",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 42.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 43.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 45.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_43",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 43.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 44.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 46.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_44",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 44.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 45.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 47.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_45",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 45.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 46.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 48.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_46",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 46.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 47.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 49.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_47",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 47.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 48.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 50.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_48",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 48.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 49.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 51.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_49",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 49.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 50.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 52.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_50",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 50.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 51.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 53.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_51",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 51.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 52.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 54.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_52",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 52.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 53.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 55.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_53",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 53.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 54.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 56.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_54",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 54.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 55.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 57.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "panel_55",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 55.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "time": 58.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 58.0,
+                        "modulator": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

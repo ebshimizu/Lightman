@@ -1,0 +1,1248 @@
+{
+    "title": "luxojr",
+    "files": [
+        "luxojr_01.exr",
+        "luxojr_02.exr",
+        "luxojr_03.exr",
+        "luxojr_04.exr",
+        "luxojr_05.exr",
+        "luxojr_06.exr",
+        "luxojr_07.exr",
+        "luxojr_08.exr",
+        "luxojr_09.exr",
+        "luxojr_10.exr",
+        "luxojr_11.exr",
+        "luxojr_12.exr",
+        "luxojr_13.exr",
+        "luxojr_14.exr",
+        "luxojr_15.exr",
+        "luxojr_16.exr",
+        "luxojr_17.exr",
+        "luxojr_18.exr",
+        "luxojr_19.exr",
+        "luxojr_20.exr"
+    ],
+    "layers": [
+        {
+            "name": "luxojr_01",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_02",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_03",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_04",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_05",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_06",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_07",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_08",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_09",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_10",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_11",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_12",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_13",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_14",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_15",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_16",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_17",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_18",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_19",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "luxojr_20",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "tonemapper": {
+        "type": "REINHARD",
+        "gamma": 2.8, 
+        "level": 3.0,
+        "key": 0.18,
+        "wht": 1.0
+    },
+    "animation": {
+        "len": 4.0,
+        "fps": 25.0,
+        "timelines": [
+            {
+                "layer": "luxojr_01",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_02",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.90,
+                            0.85,
+                            0.85
+                        ]
+                    },
+                    {
+                        "time": 0.2,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 1.2,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 2.2,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.2,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.90,
+                            0.85,
+                            0.85
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_03",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.80,
+                            0.70,
+                            0.70
+                        ]
+                    },
+                    {
+                        "time": 0.4,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 1.4,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 2.4,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.4,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.80,
+                            0.70,
+                            0.70
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_04",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.70,
+                            0.55,
+                            0.55
+                        ]
+                    },
+                    {
+                        "time": 0.6,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 1.6,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 2.6,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.6,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.70,
+                            0.55,
+                            0.55
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_05",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.60,
+                            0.40,
+                            0.40
+                        ]
+                    },
+                    {
+                        "time": 0.8,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 1.8,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 2.8,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.8,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.60,
+                            0.40,
+                            0.40
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_06",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_07",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.45,
+                            0.30,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 0.2,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.2,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 2.2,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 3.2,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.45,
+                            0.30,
+                            0.25
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_08",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.40,
+                            0.35,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 0.4,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.4,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 2.4,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 3.4,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.40,
+                            0.35,
+                            0.25
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_09",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.35,
+                            0.40,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 0.6,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.6,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 2.6,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 3.6,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.35,
+                            0.40,
+                            0.25
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_10",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.45,
+                            0.30
+                        ]
+                    },
+                    {
+                        "time": 0.8,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.8,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 2.8,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 3.8,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.45,
+                            0.30
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_11",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_12",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.45,
+                            0.30
+                        ]
+                    },
+                    {
+                        "time": 0.2,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.2,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.2,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 3.2,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.45,
+                            0.30
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_13",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.40,
+                            0.35
+                        ]
+                    },
+                    {
+                        "time": 0.4,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.4,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.4,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 3.4,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.40,
+                            0.35
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_14",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.35,
+                            0.40
+                        ]
+                    },
+                    {
+                        "time": 0.6,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.6,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.6,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 3.6,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.35,
+                            0.40
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_15",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.30,
+                            0.45
+                        ]
+                    },
+                    {
+                        "time": 0.8,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.8,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.8,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 3.8,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.30,
+                            0.45
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_16",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_17",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.40,
+                            0.40,
+                            0.60
+                        ]
+                    },
+                    {
+                        "time": 0.2,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 1.2,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.2,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.2,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.40,
+                            0.40,
+                            0.60
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_18",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.55,
+                            0.55,
+                            0.70
+                        ]
+                    },
+                    {
+                        "time": 0.4,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 1.4,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.4,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.4,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.55,
+                            0.55,
+                            0.70
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_19",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.70,
+                            0.70,
+                            0.80
+                        ]
+                    },
+                    {
+                        "time": 0.6,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 1.6,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.6,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.6,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.70,
+                            0.70,
+                            0.80
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "luxojr_20",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.85,
+                            0.85,
+                            0.90
+                        ]
+                    },
+                    {
+                        "time": 0.8,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.50
+                        ]
+                    },
+                    {
+                        "time": 1.8,
+                        "modulator": [
+                            0.25,
+                            0.50,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.8,
+                        "modulator": [
+                            0.50,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.8,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.85,
+                            0.85,
+                            0.90
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,275 @@
+{
+    "title": "lucy",
+    "files": [
+        "lucy.exr"
+    ],
+    "layers": [
+        {
+            "name": "lucy_0",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "lucy_1",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "lucy_2",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "lucy_3",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "lucy_4",
+            "active": true,
+            "modulator": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "tonemapper": {
+        "type": "REINHARD",
+        "gamma": 2.2, 
+        "level": 1.0,
+        "key": 0.18,
+        "wht": 1.0
+    },
+    "animation": {
+        "len": 4.0,
+        "fps": 25.0,
+        "timelines": [
+            {
+                "layer": "lucy_0",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.2,
+                            0.2,
+                            0.2
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "lucy_1",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.75,
+                            0.75,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.75,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.25,
+                            0.75,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.75,
+                            0.75,
+                            0.75
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "lucy_2",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.75,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.25,
+                            0.75,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.75,
+                            0.75,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.75,
+                            0.25,
+                            0.25
+                        ]
+                    }
+                ]
+            }, 
+            {
+                "layer": "lucy_3",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.75,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.75,
+                            0.75,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.75,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.75,
+                            0.25
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "lucy_4",
+                "keyframes": [
+                    {
+                        "time": 0.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 1.0,
+                        "modulator": [
+                            0.75,
+                            0.75,
+                            0.75
+                        ]
+                    },
+                    {
+                        "time": 2.0,
+                        "modulator": [
+                            0.75,
+                            0.25,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 3.0,
+                        "modulator": [
+                            0.25,
+                            0.75,
+                            0.25
+                        ]
+                    },
+                    {
+                        "time": 4.0,
+                        "modulator": [
+                            0.25,
+                            0.25,
+                            0.75
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -11,7 +11,7 @@ production.
 Lightman uses OpenEXR as its main image input format and also supports creating
 per-light renderings from ass (Arnold Scene Source) files for post-render
 re-lighting using Solid Angle's Arnold renderer. Lightman workspaces are saved
-as json and uses Jansson for creating and loading workspaces. All Dependencies
+as json and uses [Jansson](http://www.digip.org/jansson/) for creating and loading workspaces. All Dependencies
 for Lightman are listed below:
 
 * GLEW
