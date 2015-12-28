@@ -14,12 +14,10 @@ re-lighting using Solid Angle's Arnold renderer. Lightman workspaces are saved
 as json and uses Jansson for creating and loading workspaces. All Dependencies
 for Lightman are listed below:
 
-* OpenGL
 * GLEW
 * GLFW3
-* Arnold
 * OpenEXR
-* Jansson
+* Arnold (Optional)
 
 # Build Instructions
 Lightman uses cmake (version > 3.0) for its build system. To install, first
