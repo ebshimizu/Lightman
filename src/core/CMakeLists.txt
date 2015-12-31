@@ -33,6 +33,9 @@ target_link_libraries(LightmanCore
   ${JANSSON_LIBRARIES}
 )
 
+#link in libgen for windows
+target_link_libraries(LightmanCore libgen)
+
 install(TARGETS LightmanCore DESTINATION /usr/local/lib/)
 
 # build shared library

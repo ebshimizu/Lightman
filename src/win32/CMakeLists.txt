@@ -1,0 +1,1 @@
+add_library(libgen STATIC libgen.cpp)

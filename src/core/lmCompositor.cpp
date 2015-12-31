@@ -135,7 +135,7 @@ void Compositor::enable_ambient() {
       Pixel3 *pixels = layer->get_pixels();
       for (size_t i = 0; i < w * h; ++i) {
 
-        pixels[i] = pixels[i] - amb_pixels[i];
+        pixels[i] -= amb_pixels[i];
 
         // filter low values here ?
         // if (pixels[i].luminance() < amb_diff) {
@@ -166,7 +166,7 @@ void Compositor::disable_ambient() {
       Pixel3 *pixels = layer->get_pixels();
       for (size_t i = 0; i < w * h; ++i) {
 
-        pixels[i] = pixels[i] + amb_pixels[i];
+        pixels[i] += amb_pixels[i];
       }
       ++it;
     }
@@ -190,7 +190,7 @@ void Compositor::render() {
   // time_point<system_clock> sys_begin = system_clock::now();
 
   // get target buffer
-  Pixel3 *__restrict__ target = output_buffer ? output_buffer : compose_buffer;
+  Pixel3 *target = output_buffer ? output_buffer : compose_buffer;
 
   // clear previous rendering
   memset((void *)target, 0, sizeof(Pixel3) * w * h);
@@ -202,7 +202,7 @@ void Compositor::render() {
 
     layer = *it;
     vec3 m = layer->get_modulator();
-    Pixel3 *__restrict__ pixels = layer->get_pixels();
+    Pixel3 *pixels = layer->get_pixels();
 
     for (int i = 0; i < w * h; i++) {
       if (layer->is_active()) {

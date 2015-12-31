@@ -672,7 +672,9 @@
 #endif
 
 // Not standard
-#define GLM_HAS_ANONYMOUS_UNION (GLM_LANG & GLM_LANG_CXXMS_FLAG)
+#ifndef _WIN32
+	#define GLM_HAS_ANONYMOUS_UNION (GLM_LANG & GLM_LANG_CXXMS_FLAG)
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Platform 

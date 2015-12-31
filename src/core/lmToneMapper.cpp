@@ -131,7 +131,7 @@ void TMReinhard::auto_adjust() {
   for (size_t i = 0; i < num_pixels; ++i) {
 
     // the small delta value below avoids singularity
-    avg += log(0.0000001 + input_buffer[i].illum());
+    avg += log(0.0000001 + illum(input_buffer[i]));
   }
 
   avg = exp(avg / num_pixels);
@@ -154,7 +154,7 @@ void TMReinhard::apply_hdr() {
 
     Pixel3 pixel = input_buffer[i];
 
-    float l = pixel.illum();
+    float l = illum(pixel);
 
     pixel *= key / avg;
     pixel *= ((l + 1) / (wht * wht)) / (l + 1);
@@ -182,7 +182,7 @@ void TMReinhard::apply_bmp() {
 
     Pixel3 pixel = input_buffer[i];
 
-    float l = pixel.illum();
+    float l = illum(pixel);
 
     pixel *= key / avg;
     pixel *= ((l + 1) / (wht * wht)) / (l + 1);

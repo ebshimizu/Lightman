@@ -47,18 +47,19 @@ IF (APPLE OR LINUX)
 
   # Jansson
   pkg_search_module( JANSSON REQUIRED jansson )
-  if (jansson_FOUND)
+  if (NOT jansson_FOUND)
     add_subdirectory(external/jansson)
   endif()
-ELSE (APPLE OR LINUX)
+
+ELSEIF (WIN32)
+
   find_package(GLEW REQUIRED)
   find_package(GLFW REQUIRED)
   find_package(ILMBASE REQUIRED)
   find_package(OPENEXR REQUIRED)
+  find_package(JANSSON REQUIRED )
 
-  # Jansson
-  find_package( JANSSON REQUIRED )
-ENDIF (APPLE OR LINUX)
+ENDIF()
 
 # Lightman
 add_subdirectory(src)

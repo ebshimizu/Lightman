@@ -1,8 +1,11 @@
 #include "lmApplication.hpp"
 
 #include <stdio.h>
-#include <unistd.h>
 #include <iostream>
+
+#if HAVE_UNISTD_H
+#include <unistd.h>
+#endif // HAVE_UNISTD_H
 
 using namespace LightmanCore;
 
