@@ -6,8 +6,11 @@ include_directories(
     application
     ${GLEW_INCLUDE_DIRS}
     ${GLFW_INCLUDE_DIRS}
+    ${GLFW_INCLUDE_DIR}
     ${ILMBASE_INCLUDE_DIRS}
+    ${ILMBASE_INCLUDE_DIR}
     ${OPENEXR_INCLUDE_DIRS}
+    ${OPENEXR_INCLUDE_DIR}
     ${JANSSON_INCLUDE_DIRS}
 )
 
