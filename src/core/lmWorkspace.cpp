@@ -464,7 +464,7 @@ int Workspace::load_exr(const char *file_path) {
 
       // layer.R
       frame_buffer.insert((layer_name + ".R").c_str(), // name
-                          Slice(FLOAT,                 // type
+                          Slice(PixelType::FLOAT,                 // type
                                 (char *)&pixels[0].r,  // base
                                 sizeof(Pixel3) * 1,    // xstride
                                 sizeof(Pixel3) * w,    // ystride
@@ -472,7 +472,7 @@ int Workspace::load_exr(const char *file_path) {
                                 0.0));                 // fill value
       // layer.R
       frame_buffer.insert((layer_name + ".G").c_str(), // name
-                          Slice(FLOAT,                 // type
+                          Slice(PixelType::FLOAT,                 // type
                                 (char *)&pixels[0].g,  // base
                                 sizeof(Pixel3) * 1,    // xstride
                                 sizeof(Pixel3) * w,    // ystride
@@ -480,7 +480,7 @@ int Workspace::load_exr(const char *file_path) {
                                 0.0));                 // fill value
       // layer.R
       frame_buffer.insert((layer_name + ".B").c_str(), // name
-                          Slice(FLOAT,                 // type
+                          Slice(PixelType::FLOAT,                 // type
                                 (char *)&pixels[0].b,  // base
                                 sizeof(Pixel3) * 1,    // xstride
                                 sizeof(Pixel3) * w,    // ystride
@@ -512,21 +512,21 @@ int Workspace::load_exr(const char *file_path) {
   // read pixels
   FrameBuffer frame_buffer;
   frame_buffer.insert("R",                        // name
-                      Slice(FLOAT,                // type
+                      Slice(PixelType::FLOAT,     // type
                             (char *)&pixels[0].r, // base
                             sizeof(Pixel3) * 1,   // xstride
                             sizeof(Pixel3) * w,   // ystride
                             1, 1,                 // sampling
                             0.0));                // fill value
   frame_buffer.insert("G",                        // name
-                      Slice(FLOAT,                // type
+                      Slice(PixelType::FLOAT,                // type
                             (char *)&pixels[0].g, // base
                             sizeof(Pixel3) * 1,   // xstride
                             sizeof(Pixel3) * w,   // ystride
                             1, 1,                 // sampling
                             0.0));                // fill value
   frame_buffer.insert("B",                        // name
-                      Slice(FLOAT,                // type
+                      Slice(PixelType::FLOAT,                // type
                             (char *)&pixels[0].b, // base
                             sizeof(Pixel3) * 1,   // xstride
                             sizeof(Pixel3) * w,   // ystride
@@ -801,9 +801,9 @@ int Workspace::save_exr(const char *file_name) {
   Header header(w, h);
 
   // composition as base layer for compatability in other application
-  header.channels().insert("R", Channel(FLOAT));
-  header.channels().insert("G", Channel(FLOAT));
-  header.channels().insert("B", Channel(FLOAT));
+  header.channels().insert("R", Channel(PixelType::FLOAT));
+  header.channels().insert("G", Channel(PixelType::FLOAT));
+  header.channels().insert("B", Channel(PixelType::FLOAT));
 
   // layer
   for (set<Layer *>::iterator it = layers.begin(); it != layers.end(); ++it) {
@@ -811,9 +811,9 @@ int Workspace::save_exr(const char *file_name) {
     Layer *layer = *it;
     string name = layer->get_name();
 
-    header.channels().insert((name + ".R").c_str(), Channel(FLOAT));
-    header.channels().insert((name + ".G").c_str(), Channel(FLOAT));
-    header.channels().insert((name + ".B").c_str(), Channel(FLOAT));
+    header.channels().insert((name + ".R").c_str(), Channel(PixelType::FLOAT));
+    header.channels().insert((name + ".G").c_str(), Channel(PixelType::FLOAT));
+    header.channels().insert((name + ".B").c_str(), Channel(PixelType::FLOAT));
   }
 
   // create file
@@ -823,17 +823,17 @@ int Workspace::save_exr(const char *file_name) {
 
   // composition
   frame_buffer.insert("R",                                   // channel
-                      Slice(FLOAT,                           // type
+                      Slice(PixelType::FLOAT,                           // type
                             (char *)&hdr_output_buffer[0].r, // base
                             sizeof(Pixel3) * 1,              // xstride
                             sizeof(Pixel3) * w));            // ystride
   frame_buffer.insert("G",                                   // channel
-                      Slice(FLOAT,                           // type
+                      Slice(PixelType::FLOAT,                           // type
                             (char *)&hdr_output_buffer[0].g, // base
                             sizeof(Pixel3) * 1,              // xstride
                             sizeof(Pixel3) * w));            // ystride
   frame_buffer.insert("B",                                   // channel
-                      Slice(FLOAT,                           // type
+                      Slice(PixelType::FLOAT,                           // type
                             (char *)&hdr_output_buffer[0].b, // base
                             sizeof(Pixel3) * 1,              // xstride
                             sizeof(Pixel3) * w));            // ystride
@@ -846,17 +846,17 @@ int Workspace::save_exr(const char *file_name) {
     Pixel3 *pixels = layer->get_pixels();
 
     frame_buffer.insert((name + ".R").c_str(),      // channel
-                        Slice(FLOAT,                // type
+                        Slice(PixelType::FLOAT,                // type
                               (char *)&pixels[0].r, // base
                               sizeof(Pixel3) * 1,   // xstride
                               sizeof(Pixel3) * w)); // ystride
     frame_buffer.insert((name + ".G").c_str(),      // channel
-                        Slice(FLOAT,                // type
+                        Slice(PixelType::FLOAT,                // type
                               (char *)&pixels[0].g, // base
                               sizeof(Pixel3) * 1,   // xstride
                               sizeof(Pixel3) * w)); // ystride
     frame_buffer.insert((name + ".B").c_str(),      // channel
-                        Slice(FLOAT,                // type
+                        Slice(PixelType::FLOAT,                // type
                               (char *)&pixels[0].b, // base
                               sizeof(Pixel3) * 1,   // xstride
                               sizeof(Pixel3) * w)); // ystride
