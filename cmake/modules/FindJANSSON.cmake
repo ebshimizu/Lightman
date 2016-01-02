@@ -1,58 +1,60 @@
-# From https://github.com/watchedit/CMakeModules/blob/master/FindJansson.cmake
-# - Try to find Jansson
-# Once done this will define
+# Look for local installation of jansson
+# If a local installation is found, the following variables will be defined:
 #
-#  JANSSON_FOUND - system has Jansson
-#  JANSSON_INCLUDE_DIRS - the Jansson include directory
-#  JANSSON_LIBRARIES - Link these to use Jansson
+# JANSSON_FOUND
+# JANSSON_INCLUDE_DIR
+# JANSSON_LIBRARY
 #
-#  Copyright (c) 2011 Lee Hambley <lee.hambley@gmail.com>
+# Sky Gao, 2016
+# Licensed under the WTFPL, Version 2
 #
-#  Redistribution and use is allowed according to the terms of the New
-#  BSD license.
-#  For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+#             Version 2, December 2004
+#
+# Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+#
+# Everyone is permitted to copy and distribute verbatim or modified
+# copies of this license document, and changing it is allowed as long
+# as the name is changed.
+#
+#     DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+# TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+#
+# 0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
-if (JANSSON_LIBRARIES AND JANSSON_INCLUDE_DIRS)
-  # in cache already
-  set(JANSSON_FOUND TRUE)
-else (JANSSON_LIBRARIES AND JANSSON_INCLUDE_DIRS)
-  find_path(JANSSON_INCLUDE_DIR
-    NAMES
-      jansson.h
-    PATHS
-      /usr/include
-      /usr/local/include
-      /opt/local/include
-      /sw/include
+IF(UNIX)
+  SET(JANSSON_INCLUDE_PATHS
+    /usr/include
+    /usr/local/include
+    /opt/local/include
+    /sw/include
   )
 
-find_library(JANSSON_LIBRARY
-    NAMES
-      jansson
-    PATHS
-      /usr/lib
-      /usr/local/lib
-      /opt/local/lib
-      /sw/lib
+  SET(JANSSON_LIBRARY_PATHS
+    /usr/lib
+    /usr/local/lib
+    /opt/local/lib
+    /sw/lib
   )
+ELSEIF(WIN32)
+  # Note: modify this if you had jasson installed else where
+  SET(JANSSON_INCLUDE_PATHS "$ENV{PROGRAMFILES}/jansson/include" )
+  SET(JANSSON_LIBRARY_PATHS "$ENV{PROGRAMFILES}/jansson/lib" )
+ENDIF()
 
-set(JANSSON_INCLUDE_DIRS
-  ${JANSSON_INCLUDE_DIR}
-  )
+FIND_PATH(JANSSON_INCLUDE_DIR jansson.h PATHS ${JANSSON_INCLUDE_PATHS})
+IF(${JANSSON_INCLUDE_DIR} STREQUAL "JANSSON_INCLUDE_DIR-NOTFOUND")
+  MESSAGE(FATAL_ERROR "jansson header not found")
+  MESSAGE(FATAL_ERROR "JANSSON_INCLUDE_PATHS: ${JANSSON_LOCATION}")
+ENDIF()
 
-if (JANSSON_LIBRARY)
-  set(JANSSON_LIBRARIES
-    ${JANSSON_LIBRARIES}
-    ${JANSSON_LIBRARY}
-    )
-endif (JANSSON_LIBRARY)
+FIND_LIBRARY(JANSSON_LIBRARIES NAMES jansson_d PATHS ${JANSSON_LIBRARY_PATHS})
+IF(${JANSSON_LIBRARIES} STREQUAL "JANSSON_LIBRARIES-NOTFOUND")
+  MESSAGE(FATAL_ERROR "jansson library not found")
+  MESSAGE(FATAL_ERROR "JANSSON_LIBRARY_PATHS: ${JANSSON_LOCATION}")
+ENDIF()
 
-  include(FindPackageHandleStandardArgs)
-  find_package_handle_standard_args(Jansson DEFAULT_MSG
-    JANSSON_LIBRARIES JANSSON_INCLUDE_DIRS)
-
-  # show the JANSSON_INCLUDE_DIRS and JANSSON_LIBRARIES variables only in the advanced view
-  mark_as_advanced(JANSSON_INCLUDE_DIRS JANSSON_LIBRARIES)
-
-endif (JANSSON_LIBRARIES AND JANSSON_INCLUDE_DIRS)
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(JANSSON DEFAULT_MSG
+  JANSSON_LIBRARIES JANSSON_INCLUDE_DIR)

@@ -33,8 +33,11 @@ target_link_libraries(LightmanCore
   ${JANSSON_LIBRARIES}
 )
 
-#link in libgen for windows
-target_link_libraries(LightmanCore libgen)
+# link zlib and libgen for windows
+if(WIN32)
+  target_link_libraries(LightmanCore ${ZLIB_LIBRARY_RELEASE})
+  target_link_libraries(LightmanCore libgen)
+endif(WIN32)
 
 install(TARGETS LightmanCore DESTINATION /usr/local/lib/)
 

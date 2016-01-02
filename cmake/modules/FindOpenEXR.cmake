@@ -1,94 +1,113 @@
-# From http://code.metager.de/source/xref/blender/build_files/cmake/Modules/FindOpenEXR.cmake
-# - Find OpenEXR library
-# Find the native OpenEXR includes and library
-# This module defines
-#  OPENEXR_INCLUDE_DIRS, where to find ImfXdr.h, etc. Set when
-#                        OPENEXR_INCLUDE_DIR is found.
-#  OPENEXR_LIBRARIES, libraries to link against to use OpenEXR.
-#  OPENEXR_ROOT_DIR, The base directory to search for OpenEXR.
-#                    This can also be an environment variable.
-#  OPENEXR_FOUND, If false, do not try to use OpenEXR.
+# Look for local installation of OpenEXR library (version 2.2)
+# If a local installation is found, the following variables will be defined:
 #
-# For individual library access these advanced settings are available
-#  OPENEXR_HALF_LIBRARY, Path to Half library
-#  OPENEXR_IEX_LIBRARY, Path to Half library
-#  OPENEXR_ILMIMF_LIBRARY, Path to Ilmimf library
-#  OPENEXR_ILMTHREAD_LIBRARY, Path to IlmThread library
-#  OPENEXR_IMATH_LIBRARY, Path to Imath library
+# OPENEXR_FOUND
+# OPENEXR_INCLUDE_DIR
+# OPENEXR_LIBRARIES
 #
-# also defined, but not for general use are
-#  OPENEXR_LIBRARY, where to find the OpenEXR library.
+# Please note that the find module is mostly written for windows, to use
+# OpenEXR on unix systems, consider using cmake with pkg-config.
+# Sky Gao, 2016
+#
+# Licensed under the WTFPL, Version 2
+#
+# DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+#             Version 2, December 2004
+#
+# Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+#
+# Everyone is permitted to copy and distribute verbatim or modified
+# copies of this license document, and changing it is allowed as long
+# as the name is changed.
+#
+#     DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+# TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+#
+# 0. You just DO WHAT THE FUCK YOU WANT TO.
+#
 
-#=============================================================================
-# Copyright 2011 Blender Foundation.
-#
-# Distributed under the OSI-approved BSD License (the "License");
-# see accompanying file Copyright.txt for details.
-#
-# This software is distributed WITHOUT ANY WARRANTY; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the License for more information.
-#=============================================================================
-
-# If OPENEXR_ROOT_DIR was defined in the environment, use it.
-IF(NOT OPENEXR_ROOT_DIR AND NOT $ENV{OPENEXR_ROOT_DIR} STREQUAL "")
-  SET(OPENEXR_ROOT_DIR $ENV{OPENEXR_ROOT_DIR})
+# ILMBASE required
+IF(NOT DEFINED ILMBASE_LOCATION)
+  MESSAGE(FATAL_ERROR "ilmbase library not found")
+  MESSAGE(FATAL_ERROR "ilmbase is required by openexr, please use find_package
+  to find ILMBASE before OpenEXR")
 ENDIF()
 
-SET(_openexr_FIND_COMPONENTS
-  Half
-  Iex
-  IlmImf
-  IlmThread
-  Imath
+IF(NOT DEFINED OPENEXR_LOCATION)
+  IF (UNIX)
+      SET(OPENEXR_LOCATION /usr/local)
+  ELSEIF(WIN32)
+    # Note: This assumes that OpenEXR was installed under the default
+    # location in the cmake configurations shipped in version 2.2
+    SET(OPENEXR_LOCATION "$ENV{PROGRAMFILES}/openexr" )
+  ENDIF()
+ENDIF()
+
+SET(OPENEXR_LIB_PATHS
+  "${OPENEXR_LOCATION}/lib"
+  "${OPENEXR_LOCATION}/lib/Release"
+  "${OPENEXR_LOCATION}/lib/x64/Release"
+  "$ENV{OPENEXR_LOCATION}/lib"
+  "$ENV{OPENEXR_LOCATION}/lib/Release"
+  "$ENV{OPENEXR_LOCATION}/lib/x64/Release"
+  ~/Library/Frameworks
+  /Library/Frameworks
+  /usr/local/lib
+  /usr/lib
+  /sw/lib
+  /opt/local/lib
+  /opt/csw/lib
+  /opt/lib
+  /usr/freeware/lib64
+  NO_DEFAULT_PATH
+  NO_CMAKE_ENVIRONMENT_PATH
+  NO_CMAKE_PATH
+  NO_SYSTEM_ENVIRONMENT_PATH
+  NO_CMAKE_SYSTEM_PATH
 )
 
-SET(_openexr_SEARCH_DIRS
-  ${OPENEXR_ROOT_DIR}
-  /usr/local
-  /sw # Fink
-  /opt/local # DarwinPorts
-  /opt/csw # Blastwave
+SET(OPENEXR_INCLUDE_PATHS
+  "${OPENEXR_LOCATION}/include"
+  "${OPENEXR_LOCATION}/include/OpenEXR/"
+  "$ENV{OPENEXR_LOCATION}/include"
+  "$ENV{OPENEXR_LOCATION}/include/OpenEXR/"
+  /usr/local/include
+  /usr/local/include/OpenEXR/
+  /usr/include
+  /usr/include/OpenEXR
+  /opt/include
+  /opt/local/include # Macports
+  /usr/local/Cellar  # Homebrew
+  /opt/csw/include   # Blastwave
+  /sw/include        # Fink
 )
 
-FIND_PATH(OPENEXR_INCLUDE_DIR
-  NAMES
-    OpenEXR/ImfXdr.h
-  HINTS
-    ${_openexr_SEARCH_DIRS}
-  PATH_SUFFIXES
-    include
+FIND_PATH(OPENEXR_INCLUDE_DIR /ImfXdr.h PATHS ${OPENEXR_INCLUDE_PATHS})
+IF(${OPENEXR_INCLUDE_DIR} STREQUAL "OPENEXR_INCLUDE_DIR-NOTFOUND")
+  MESSAGE(FATAL_ERROR "OpenEXR header files not found")
+  MESSAGE(FATAL_ERROR "OPENEXR_LOCATION: ${OPENEXR_LOCATION}")
+ENDIF()
+
+FIND_LIBRARY(ILMBASE_HALF_LIB Half PATHS ${ILMBASE_LIB_PATHS})
+IF(${ILMBASE_HALF_LIB} STREQUAL "ILMBASE_HALF_LIB-NOTFOUND")
+  MESSAGE(FATAL_ERROR "ILMBase library (Half) not foun")
+  MESSAGE(FATAL_ERROR "ILM_LIB_PATHS: ${ILMBASE_LIB_PATHS}")
+ENDIF()
+
+FIND_LIBRARY(OPENEXR_ILMIMF_LIB IlmImf-2_2 PATHS ${OPENEXR_LIB_PATHS})
+IF(${OPENEXR_ILMIMF_LIB} STREQUAL "OPENEXR_ILMIMF_LIB-NOTFOUND")
+  MESSAGE(FATAL_ERROR "OpenEXR library (IlmImf) not foun")
+  MESSAGE(FATAL_ERROR "OPENEXR_LOCATION: ${OPENEXR_LOCATION}")
+ENDIF()
+
+SET(OPENEXR_LIBRARIES
+  ${ILMBASE_HALF_LIB}
+  ${ILMBASE_LIBRARIES}
+  ${OPENEXR_ILMIMF_LIB}
 )
 
-SET(_openexr_LIBRARIES)
-FOREACH(COMPONENT ${_openexr_FIND_COMPONENTS})
-  STRING(TOUPPER ${COMPONENT} UPPERCOMPONENT)
-
-  FIND_LIBRARY(OPENEXR_${UPPERCOMPONENT}_LIBRARY
-    NAMES
-      ${COMPONENT}
-    HINTS
-      ${_openexr_SEARCH_DIRS}
-    PATH_SUFFIXES
-      lib64 lib
-    )
-  LIST(APPEND _openexr_LIBRARIES "${OPENEXR_${UPPERCOMPONENT}_LIBRARY}")
-ENDFOREACH()
-
-# handle the QUIETLY and REQUIRED arguments and set OPENEXR_FOUND to TRUE if 
-# all listed variables are TRUE
 INCLUDE(FindPackageHandleStandardArgs)
-FIND_PACKAGE_HANDLE_STANDARD_ARGS(OpenEXR  DEFAULT_MSG
-    _openexr_LIBRARIES OPENEXR_INCLUDE_DIR)
-
-IF(OPENEXR_FOUND)
-  SET(OPENEXR_LIBRARIES ${_openexr_LIBRARIES})
-  # Both include paths are needed because of dummy OSL headers mixing #include <OpenEXR/foo.h> and #include <foo.h> :(
-  SET(OPENEXR_INCLUDE_DIRS ${OPENEXR_INCLUDE_DIR} ${OPENEXR_INCLUDE_DIR}/OpenEXR)
-ENDIF()
-
-MARK_AS_ADVANCED(OPENEXR_INCLUDE_DIR)
-FOREACH(COMPONENT ${_openexr_FIND_COMPONENTS})
-  STRING(TOUPPER ${COMPONENT} UPPERCOMPONENT)
-  MARK_AS_ADVANCED(OPENEXR_${UPPERCOMPONENT}_LIBRARY)
-ENDFOREACH()
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(OPENEXR DEFAULT_MSG
+  OPENEXR_INCLUDE_DIR
+  OPENEXR_LIBRARIES
+)

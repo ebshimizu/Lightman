@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 project(Lightman)
 
 # Configuration
-option(LIGHTMAN_BUILD_SHARED              "Build shared libraries"        ON)
 option(LIGHTMAN_BUILD_SAMPLES             "Build samples"                 ON)
+option(LIGHTMAN_BUILD_SHARED              "Build shared libraries"        OFF)
 option(LIGHTMAN_BUILD_DOCUMENTATION       "Build documentation"           OFF)
 option(LIGHTMAN_BUILD_ARNOLD_SUPPORT      "Build with Arnold support"     OFF)
 
@@ -53,6 +53,7 @@ IF (APPLE OR LINUX)
 
 ELSEIF (WIN32)
 
+  find_package(ZLIB REQUIRED)
   find_package(GLEW REQUIRED)
   find_package(GLFW REQUIRED)
   find_package(ILMBASE REQUIRED)
