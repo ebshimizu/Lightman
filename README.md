@@ -11,13 +11,17 @@ production.
 Lightman uses OpenEXR as its main image input format and also supports creating
 per-light renderings from ass (Arnold Scene Source) files for post-render
 re-lighting using Solid Angle's Arnold renderer. Lightman workspaces are saved
-as json and uses [Jansson](http://www.digip.org/jansson/) for creating and loading workspaces. All Dependencies
-for Lightman are listed below:
+as json and uses [Jansson](http://www.digip.org/jansson/) for saving and
+loading workspaces. All Dependencies for Lightman are listed below:
 
 * GLEW
 * GLFW3
 * OpenEXR
+* Jansson
 * Arnold (Optional)
+
+If you are building on Windows, zlib is also required and you can get zlib for
+windows [here](http://zlib.net/).
 
 # Build Instructions
 Lightman uses cmake (version > 3.0) for its build system. To install, first
@@ -28,6 +32,9 @@ directory:
 * cd build
 * cmake ..
 * make install
+
+Note that you may have to manually adjust some of the cmake variables to build
+on Windows.
 
 # Documentation
 Lightman is documented using Doxygen. Uncomment `BUILD_DOCUMENTATION` in the cmake configuration file to generate documentation (doxygen required).

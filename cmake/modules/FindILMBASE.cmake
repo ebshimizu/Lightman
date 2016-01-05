@@ -1,166 +1,113 @@
-# From https://github.com/PixarAnimationStudios/OpenSubdiv/blob/master/cmake/FindIlmBase.cmake
+# Look for local installation of ILMBASE library (version 2.2)
+# If a local installation is found, the following variables will be defined:
 #
-#   Copyright 2013 Pixar
+# ILMBASE_FOUND
+# ILMBASE_INCLUDE_DIR
+# ILMBASE_LIBRARIES
 #
-#   Licensed under the Apache License, Version 2.0 (the "Apache License")
-#   with the following modification; you may not use this file except in
-#   compliance with the Apache License and the following modification to it:
-#   Section 6. Trademarks. is deleted and replaced with:
+# Please note that the find module is mostly written for windows, to use
+# ILMBase on unix systems, consider using cmake with pkg-config.
+# Sky Gao, 2016
 #
-#   6. Trademarks. This License does not grant permission to use the trade
-#      names, trademarks, service marks, or product names of the Licensor
-#      and its affiliates, except as required to comply with Section 4(c) of
-#      the License and to reproduce the content of the NOTICE file.
+# Licensed under the WTFPL, Version 2
 #
-#   You may obtain a copy of the Apache License at
+# DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+#             Version 2, December 2004
 #
-#       http://www.apache.org/licenses/LICENSE-2.0
+# Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
 #
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the Apache License with the above modification is
-#   distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-#   KIND, either express or implied. See the Apache License for the specific
-#   language governing permissions and limitations under the Apache License.
+# Everyone is permitted to copy and distribute verbatim or modified
+# copies of this license document, and changing it is allowed as long
+# as the name is changed.
 #
-
-# - Try to find the IlmBase library
-# Once done this will define
+#     DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+# TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 #
-#  ILMBASE_FOUND - System has IlmBase
-#  ILMBASE_INCLUDE_DIR - The include directory
-#  ILMBASE_LIBRARIES - The libraries needed
+# 0. You just DO WHAT THE FUCK YOU WANT TO.
+#
 
 IF(NOT DEFINED ILMBASE_LOCATION)
-    IF ( ${CMAKE_HOST_UNIX} )
-        IF( APPLE )
-          # TODO: set to default install path when shipping out
-          SET( ILMBASE_LOCATION NOTFOUND )
-        ELSE()
-          SET(ILMBASE_LOCATION /usr/local/ilmbase-1.0.1 )
-        ENDIF()
-    ELSE()
-        IF ( WIN32 )
-          # Note: This assumes that the Deploy directory has been copied
-          #       back into the IlmBase root directory.
-          SET( ILMBASE_LOCATION "$ENV{PROGRAMFILES}/ilmbase-1.0.1/Deploy" )
-        ENDIF()
-    ENDIF()
+  IF(UNIX)
+    SET(ILMBASE_LOCATION /usr/local)
+  ELSEIF(WIN32)
+    # Note: This assumes that ILMBASE was installed under the default
+    # location in the cmake configurations shipped in version 2.2
+    SET(ILMBASE_LOCATION "$ENV{PROGRAMFILES}/ilmbase" )
+  ENDIF()
 ENDIF()
 
-IF ( ${CMAKE_HOST_UNIX} )
-    SET(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -lpthread")
-ELSE()
-ENDIF()
-
-SET(LIBRARY_PATHS
-    "${ILMBASE_LOCATION}/lib"
-    "${ILMBASE_LOCATION}/lib/Release"
-    "${ILMBASE_LOCATION}/lib/x64/Release"
-    "$ENV{ILMBASE_LOCATION}/lib"
-    "$ENV{ILMBASE_LOCATION}/lib/Release"
-    "$ENV{ILMBASE_LOCATION}/lib/x64/Release"
-    ~/Library/Frameworks
-    /Library/Frameworks
-    /usr/local/lib
-    /usr/lib
-    /sw/lib
-    /opt/local/lib
-    /opt/csw/lib
-    /opt/lib
-    /usr/freeware/lib64
+SET(ILMBASE_LIB_PATHS
+  "${ILMBASE_LOCATION}/lib"
+  "${ILMBASE_LOCATION}/lib/Release"
+  "${ILMBASE_LOCATION}/lib/x64/Release"
+  "$ENV{ILMBASE_LOCATION}/lib"
+  "$ENV{ILMBASE_LOCATION}/lib/Release"
+  "$ENV{ILMBASE_LOCATION}/lib/x64/Release"
+  ~/Library/Frameworks
+  /Library/Frameworks
+  /usr/local/lib
+  /usr/lib
+  /sw/lib
+  /opt/local/lib
+  /opt/csw/lib
+  /opt/lib
+  /usr/freeware/lib64
+  NO_DEFAULT_PATH
+  NO_CMAKE_ENVIRONMENT_PATH
+  NO_CMAKE_PATH
+  NO_SYSTEM_ENVIRONMENT_PATH
+  NO_CMAKE_SYSTEM_PATH
 )
 
-SET(INCLUDE_PATHS
-    "${ILMBASE_LOCATION}/include/OpenEXR/"
-    "${ILMBASE_LOCATION}/include"
-    "$ENV{ILMBASE_LOCATION}/include/OpenEXR/"
-    "$ENV{ILMBASE_LOCATION}/include"
-    ~/Library/Frameworks
-    /Library/Frameworks
-    /usr/local/include/OpenEXR/
-    /usr/local/include
-    /usr/include
-    /usr/include/OpenEXR
-    /sw/include # Fink
-    /opt/local/include # DarwinPorts
-    /opt/csw/include # Blastwave
-    /opt/include
-    /usr/freeware/include
+SET(ILMBASE_INCLUDE_PATHS
+  "${ILMBASE_LOCATION}/include"
+  "${ILMBASE_LOCATION}/include/OpenEXR/"
+  "$ENV{ILMBASE_LOCATION}/include"
+  "$ENV{ILMBASE_LOCATION}/include/OpenEXR/"
+  /usr/local/include
+  /usr/local/include/OpenEXR/
+  /usr/include
+  /usr/include/OpenEXR
+  /opt/include
+  /opt/local/include # Macports
+  /usr/local/Cellar  # Homebrew
+  /opt/csw/include   # Blastwave
+  /sw/include        # Fink
 )
 
 
-FIND_PATH( ILMBASE_INCLUDE_DIR 
-        ImathMath.h
-    PATHS
-        "${INCLUDE_PATHS}"
-    NO_DEFAULT_PATH
-    NO_CMAKE_ENVIRONMENT_PATH
-    NO_CMAKE_PATH
-    NO_SYSTEM_ENVIRONMENT_PATH
-    NO_CMAKE_SYSTEM_PATH
-    DOC "The directory where ImathMath.h resides" )
-
-FIND_LIBRARY( ILMBASE_IEX_LIB 
-        Iex
-    PATHS
-        "${LIBRARY_PATHS}"
-        NO_DEFAULT_PATH
-        NO_CMAKE_ENVIRONMENT_PATH
-        NO_CMAKE_PATH
-        NO_SYSTEM_ENVIRONMENT_PATH
-        NO_CMAKE_SYSTEM_PATH
-        DOC "The Iex library" )
-
-FIND_LIBRARY( ILMBASE_ILMTHREAD_LIB 
-        IlmThread
-    PATHS
-        "${LIBRARY_PATHS}"
-        NO_DEFAULT_PATH
-        NO_CMAKE_ENVIRONMENT_PATH
-        NO_CMAKE_PATH
-        NO_SYSTEM_ENVIRONMENT_PATH
-        NO_CMAKE_SYSTEM_PATH
-        DOC "The IlmThread library" )
-
-FIND_LIBRARY( ILMBASE_IMATH_LIB
-        Imath
-    PATHS
-        "${LIBRARY_PATHS}"
-        NO_DEFAULT_PATH
-        NO_CMAKE_ENVIRONMENT_PATH
-        NO_CMAKE_PATH
-        NO_SYSTEM_ENVIRONMENT_PATH
-        NO_CMAKE_SYSTEM_PATH
-        DOC "The Imath library" )
-
-
-IF ( ${ILMBASE_IEX_LIB} STREQUAL "ILMBASE_IEX_LIB-NOTFOUND" )
-  MESSAGE( FATAL_ERROR "ilmbase libraries (Iex) not found, required: ILMBASE_LOCATION: ${ILMBASE_LOCATION}" )
+FIND_PATH(ILMBASE_INCLUDE_DIR ImathMath.h PATHS ${ILMBASE_INCLUDE_PATHS})
+IF(${ILMBASE_INCLUDE_DIR} STREQUAL "ILMBASE_INCLUDE_DIR-NOTFOUND")
+  MESSAGE(FATAL_ERROR "ILMBase header files not found")
+  MESSAGE(FATAL_ERROR "ILMBASE_LOCATION: ${ILMBASE_LOCATION}")
 ENDIF()
 
-IF ( ${ILMBASE_ILMTHREAD_LIB} STREQUAL "ILMBASE_ILMTHREAD_LIB-NOTFOUND" )
-  MESSAGE( FATAL_ERROR "ilmbase libraries (IlmThread) not found, required: ILMBASE_LOCATION: ${ILMBASE_LOCATION}" )
+FIND_LIBRARY(ILMBASE_IEX_LIB Iex-2_2 PATHS ${ILMBASE_LIB_PATHS})
+IF(${ILMBASE_IEX_LIB} STREQUAL "ILMBASE_IEX_LIB-NOTFOUND")
+  MESSAGE(FATAL_ERROR "ILMBase libraries (Iex) not foun")
+  MESSAGE(FATAL_ERROR "ILMBASE_LOCATION: ${ILMBASE_LOCATION}")
 ENDIF()
 
-IF ( ${ILMBASE_IMATH_LIB} STREQUAL "ILMBASE_IMATH_LIB-NOTFOUND" )
-  MESSAGE( FATAL_ERROR "ilmbase libraries (Imath) not found, required: ILMBASE_LOCATION: ${ILMBASE_LOCATION}" )
+FIND_LIBRARY(ILMBASE_ILMTHREAD_LIB IlmThread-2_2 PATHS ${ILMBASE_LIB_PATHS})
+IF(${ILMBASE_ILMTHREAD_LIB} STREQUAL "ILMBASE_ILMTHREAD_LIB-NOTFOUND")
+  MESSAGE(FATAL_ERROR "ILMBase libraries (IlmThread) not found")
+  MESSAGE(FATAL_ERROR "ILMBASE_LOCATION: ${ILMBASE_LOCATION}")
 ENDIF()
 
-IF ( ${ILMBASE_INCLUDE_DIR} STREQUAL "ILMBASE_INCLUDE_DIR-NOTFOUND" )
-  MESSAGE( FATAL_ERROR "ilmbase header files not found, required: ILMBASE_LOCATION: ${ILMBASE_LOCATION}" )
+FIND_LIBRARY(ILMBASE_IMATH_LIB Imath-2_2 PATHS ${ILMBASE_LIB_PATHS})
+IF(${ILMBASE_IMATH_LIB} STREQUAL "ILMBASE_IMATH_LIB-NOTFOUND")
+  MESSAGE(FATAL_ERROR "ILMBase libraries (Imath) not found")
+  MESSAGE(FATAL_ERROR "ILMBASE_LOCATION: ${ILMBASE_LOCATION}")
 ENDIF()
 
-SET( ILMBASE_LIBRARIES
-    "${ILMBASE_IMATH_LIB}"
-    "${ILMBASE_ILMTHREAD_LIB}"
-    "${ILMBASE_IEX_LIB}"
+SET(ILMBASE_LIBRARIES
+  ${ILMBASE_IMATH_LIB}
+  ${ILMBASE_ILMTHREAD_LIB}
+  ${ILMBASE_IEX_LIB}
 )
 
 INCLUDE(FindPackageHandleStandardArgs)
-FIND_PACKAGE_HANDLE_STANDARD_ARGS(IlmBase DEFAULT_MSG
-    ILMBASE_LOCATION
-    ILMBASE_INCLUDE_DIR
-    ILMBASE_LIBRARIES
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(ILMBASE DEFAULT_MSG
+  ILMBASE_INCLUDE_DIR
+  ILMBASE_LIBRARIES
 )
-
-SET( ILMBASE_FOUND TRUE )

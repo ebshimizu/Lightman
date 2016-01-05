@@ -17,6 +17,7 @@ add_library (LightmanApp STATIC
 target_link_libraries(LightmanApp
   LightmanCore
   LightmanDisp
+  ${GLEW_LIBRARIES}
   ${GLFW_LIBRARIES}
 )
 
@@ -33,6 +34,7 @@ if(LIGHTMAN_BUILD_SHARED)
   target_link_libraries( LightmanAppShared
     LightmanCore
     LightmanDisp
+    ${GLEW_LIBRARIES}
     ${GLFW_LIBRARIES}
   )
 

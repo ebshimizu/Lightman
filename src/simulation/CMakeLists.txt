@@ -14,6 +14,13 @@ add_library(LightmanSim STATIC
   ${LIGHTMAN_SIM_HEADER}
 )
 
+target_link_libraries(LightmanSim
+  LightmanCore
+  LightmanDisp
+  ${GLEW_LIBRARIES}
+  ${GLFW_LIBRARIES}
+)
+
 install(TARGETS LightmanSim DESTINATION /usr/local/lib/)
 
 # build shared library
@@ -27,6 +34,7 @@ if(LIGHTMAN_BUILD_SHARED)
   target_link_libraries( LightmanSimShared
     LightmanDisp
     LightmanCoreShared
+    ${GLFW_LIBRARIES}
     ${GLFW_LIBRARIES}
   )
 
